@@ -1,4 +1,5 @@
 import pygame
+from settings import Settings
 
 class Ship:
 
@@ -16,6 +17,8 @@ class Ship:
         # Start each new ship at the bottom centeer of the screen.
         self.rect.midbottom = self.screen_rect.midbottom
 
+        self.settings = Settings()
+
         self.moving_right = False
         self.moving_left = False
 
@@ -23,11 +26,11 @@ class Ship:
         # Update the ship's position based on movement flags.
         if self.moving_right:
             if self.rect.x <= self.screen_rect.right - self.rect.width:
-                self.rect.x += 5
+                self.rect.x += self.settings.ship_speed
 
         if self.moving_left:
             if self.rect.x >= self.screen_rect.left:
-                self.rect.x -= 5
+                self.rect.x -= self.settings.ship_speed
             
 
     def blitme(self):
