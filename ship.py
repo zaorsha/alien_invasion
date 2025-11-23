@@ -1,5 +1,4 @@
 import pygame
-from settings import Settings
 
 class Ship:
 
@@ -17,7 +16,7 @@ class Ship:
         # Start each new ship at the bottom centeer of the screen.
         self.rect.midbottom = self.screen_rect.midbottom
 
-        self.settings = Settings()
+        self.settings = ai_game.settings
 
         self.moving_right = False
         self.moving_left = False
